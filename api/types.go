@@ -165,15 +165,7 @@ type Tool struct {
 type ToolFunction struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
-	Parameters  struct {
-		Type       string   `json:"type"`
-		Required   []string `json:"required"`
-		Properties map[string]struct {
-			Type        string   `json:"type"`
-			Description string   `json:"description"`
-			Enum        []string `json:"enum,omitempty"`
-		} `json:"properties"`
-	} `json:"parameters"`
+	Parameters  any    `json:"parameters"`
 }
 
 func (t *ToolFunction) String() string {
